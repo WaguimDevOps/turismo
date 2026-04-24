@@ -9,7 +9,7 @@ import { GET_ATTRACTIONS } from "@/lib/queries";
 import { handleShare } from "@/lib/utils";
 
 const Attractions = () => {
-  const { data, loading, error } = useQuery(GET_ATTRACTIONS);
+  const { data, loading, error } = useQuery<{ posts: { nodes: any[] } }>(GET_ATTRACTIONS);
 
   if (loading) return (
     <div className="py-24 text-center text-slate-500">Carregando atrativos...</div>

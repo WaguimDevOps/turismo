@@ -8,7 +8,7 @@ import { useQuery } from "@apollo/client/react";
 import { GET_EVENTOS } from "@/lib/queries";
 
 const EventsSection = () => {
-  const { data, loading } = useQuery(GET_EVENTOS);
+  const { data, loading } = useQuery<{ eventos: { nodes: any[] } }>(GET_EVENTOS);
   const events = data?.eventos?.nodes || [];
 
   if (loading) return (

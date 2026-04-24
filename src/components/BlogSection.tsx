@@ -8,7 +8,7 @@ import { useQuery } from "@apollo/client/react";
 import { GET_BLOG_POSTS } from "@/lib/queries";
 
 const BlogSection = () => {
-  const { data, loading, error } = useQuery(GET_BLOG_POSTS);
+  const { data, loading, error } = useQuery<{ posts: { nodes: any[] } }>(GET_BLOG_POSTS);
 
   if (loading) return (
     <div className="py-24 text-center text-slate-500">Carregando artigos...</div>

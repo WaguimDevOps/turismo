@@ -10,7 +10,7 @@ import Link from "next/link";
 
 export default function SinglePost({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = use(params);
-  const { data, loading, error } = useQuery(GET_POST_BY_SLUG, {
+  const { data, loading, error } = useQuery<{ post: any }>(GET_POST_BY_SLUG, {
     variables: { slug },
   });
 
